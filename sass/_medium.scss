@@ -1,0 +1,11 @@
+@media screen and (min-width: 640px) {
+  .modalShadow {
+    &__modal {
+      width: 600px;
+
+      &-close {
+        margin: 40px auto 0;
+      }
+    }
+  }
+}
