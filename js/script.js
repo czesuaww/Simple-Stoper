@@ -89,26 +89,30 @@ const showModal = () => {
     modalShadow.style.display = "none";
   }
 
-  modalShadow.classList.toggle("modal-animation");
+  modalShadow.classList.toggle("show-modal-animation");
 };
+
+const clickHideModal = (e) => (e.target === modalShadow ? showModal() : false);
 
 const showColors = () => {
   colorPanel.classList.toggle("show-colors");
-  console.log("dupa");
 };
 
 const changeFirstColor = () => {
   root.style.setProperty("--first-color", "rgb(215, 212, 38)");
   root.style.setProperty("--hover-color", "rgb(194, 192, 56)");
 };
+
 const changeSecondColor = () => {
   root.style.setProperty("--first-color", "rgb(6, 173, 250)");
   root.style.setProperty("--hover-color", "rgb(82, 153, 185)");
 };
+
 const changeThirdColor = () => {
   root.style.setProperty("--first-color", "rgb(0, 250, 42)");
   root.style.setProperty("--hover-color", "rgb(76, 179, 93)");
 };
+
 startBtn.addEventListener("click", handleStart);
 pauseBtn.addEventListener("click", handlePause);
 stopBtn.addEventListener("click", handleStop);
@@ -116,9 +120,7 @@ resetBtn.addEventListener("click", handleReset);
 historyBtn.addEventListener("click", showHistory);
 infoBtn.addEventListener("click", showModal);
 closeModalBtn.addEventListener("click", showModal);
-window.addEventListener("click", (e) => {
-  e.target === modalShadow ? showModal() : false;
-});
+window.addEventListener("click", clickHideModal);
 
 //colors
 colorBtn.addEventListener("click", showColors);
