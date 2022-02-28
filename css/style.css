@@ -72,11 +72,6 @@ button:hover, button:focus {
           animation: show-modal 0.5s forwards;
 }
 
-.show-shadow-adnimation {
-  -webkit-animation: show-shadow 0.5s 1s forwards;
-          animation: show-shadow 0.5s 1s forwards;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

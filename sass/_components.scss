@@ -7,7 +7,6 @@
   grid-template-rows: 1fr 1fr;
   margin: 0 auto;
   width: 100%;
-  // min-height: 60vh;
   max-width: 450px;
   color: var(--white-color);
   background-image: radial-gradient(
@@ -23,7 +22,6 @@
 button {
   margin: 0.2em;
   padding: 0.5em 1.3em;
-  // width: 100%;
   color: var(--white-color);
   font-size: 1.2rem;
   background-color: transparent;
@@ -35,17 +33,11 @@ button {
   &:hover,
   &:focus {
     background-color: var(--first-color);
-    // outline: none;
   }
 }
 
 .timeList {
-  // display: flex;
-  // align-items: center;
   text-align: center;
-  // display: flex;
-  // justify-content: center;
-  // width: 300px;
   font-size: 1.3rem;
   color: var(--second-color);
 
@@ -56,6 +48,11 @@ button {
     font-weight: bold;
   }
 }
+
 .show-colors {
   transform: translateY(200px);
+}
+
+.show-modal-animation {
+  animation: show-modal 0.5s forwards;
 }
