@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat:400,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/ce1ab2aef5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="stoper">
+        <div class="stoper__info">
+          <i class="fas fa-question"></i>
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <div class="stoper__colors ">
+          <div class="color stoper__colors-one "></div>
+          <div class="color stoper__colors-two"></div>
+          <div class="color stoper__colors-three"></div>
+        </div>
+        <h1 class="stoper__heading">Stopwatch</h1>
+        <p class="stoper__stopwatch">0:00</p>
+        <p class="stoper__time">0:00</p>
+      </div>
+        <div class="buttons">
+          <button class="buttons__start">
+            <i class="fas fa-play"></i>
+          </button>
+          <button class="buttons__pause">
+            <i class="fas fa-pause"></i>
+          </button>
+          <button class="buttons__stop">
+            <i class="fas fa-stop"></i>
+          </button>
+          <button class="buttons__reset">
+            <i class="fas fa-times"></i>
+          </button>
+          <button class="buttons__history">history</button>
+        </div>
+        <ul class="timeList">
+        </ul>
+      </div>
+    </div>
+
+    <div class="modalShadow">
+      <div class="modalShadow__modal">
+        <h3 class="modalShadow__modal-heading">Instruction:</h3>
+        <p class="modalShadow__modal-start">
+          <i class="fas fa-play"></i> - start
+        </p>
+        <p class="modalShadow__modal-pause">
+          <i class="fas fa-pause"></i> - pause
+        </p>
+        <p class="modalShadow__modal-stop">
+          <i class="fas fa-stop"></i> - stop
+        </p>
+        <p class="modalShadow__modal-reset">
+          <i class="fas fa-times"></i> - delete all (including history)
+        </p>
+        <p class="modalShadow__modal-history">
+          <strong>history</strong> - see earlier times
+        </p>
+
+        <button class="modalShadow__modal-close">Zamknij</button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

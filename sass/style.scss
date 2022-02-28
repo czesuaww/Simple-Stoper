@@ -1,0 +1,261 @@
+@import "./colors";
+@import "./components";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--back-color);
+}
+
+.stoper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+  &__info {
+    i {
+      position: absolute;
+      top: 6px;
+      padding: 20px;
+      font-size: 1.4rem;
+      color: var(--second-color);
+      cursor: pointer;
+      transition: color 0.4s;
+
+      &:hover {
+        color: var(--first-color);
+      }
+    }
+
+    .fa-question {
+      left: 16px;
+    }
+
+    .fa-paint-brush {
+      left: 60px;
+    }
+  }
+
+  .color {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.5s, box-shadow 0.5s;
+  }
+
+  &__colors {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    right: -100px;
+    // right: 120px;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    width: 64px;
+    height: 220px;
+    transition: 0.5s;
+
+    &-one {
+      background-color: rgb(215, 212, 38);
+      box-shadow: 0 0 8px rgb(194, 192, 56);
+      &:hover {
+        background-color: rgb(173, 171, 46);
+        box-shadow: 0 0 8px rgb(231, 228, 14);
+      }
+    }
+    &-two {
+      background-color: rgb(6, 173, 250);
+      box-shadow: 0 0 8px rgb(6, 173, 250);
+
+      &:hover {
+        background-color: rgb(82, 153, 185);
+        box-shadow: 0 0 16px rgb(6, 173, 250);
+      }
+    }
+    &-three {
+      background-color: rgb(0, 250, 42);
+      box-shadow: 0 0 8px rgb(0, 250, 42);
+
+      &:hover {
+        background-color: rgb(76, 179, 93);
+        box-shadow: 0 0 16px rgb(0, 250, 42);
+      }
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0.5em;
+    font-size: 50px;
+    font-weight: lighter;
+  }
+
+  &__stopwatch {
+    font-size: 52px;
+    color: var(--first-color);
+  }
+
+  &__time {
+    visibility: hidden;
+    color: var(--second-color);
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .show-colors {
+    transform: translateX(-110px);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  .fas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.modalShadow {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.65);
+
+  &__modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    min-height: 360px;
+    padding: 30px 60px;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245);
+
+    &-heading {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    &-start,
+    &-pause,
+    &-stop,
+    &-reset,
+    &-history {
+      margin-bottom: 10px;
+      margin-left: 20px;
+      font-size: 20px;
+
+      strong {
+        color: var(--first-color);
+      }
+    }
+
+    .fas {
+      color: var(--first-color);
+    }
+
+    &-close {
+      display: block;
+      margin: 10px auto 0;
+      width: 200px;
+      background-color: var(--first-color);
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--hover-color);
+      }
+    }
+  }
+}
+
+.modal-animation {
+  animation: show-modal 0.5s;
+}
+
+@keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .buttons {
+    margin: 55px;
+  }
+}
+
+@media screen and (min-width: 419px) {
+  .timeList {
+    grid-column: 1/3;
+  }
+
+  .stoper {
+    padding: 2em;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    &__heading {
+      font-size: 40px;
+    }
+
+    &__stopwatch {
+      font-size: 45px;
+    }
+
+    &__time {
+      padding-top: 0.8em;
+      font-size: 25px;
+    }
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .buttons {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    margin: 30px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .modalShadow {
+    &__modal {
+      width: 600px;
+
+      &-close {
+        margin: 40px auto 0;
+      }
+    }
+  }
+}
